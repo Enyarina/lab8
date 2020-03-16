@@ -17,6 +17,8 @@
 #include <boost/log/expressions/keyword.hpp>
 
 using namespace boost::asio;
+namespace logging = boost::log;
+static const uint32_t SIZE_FILE = 10*1024*1024;
 static const uint32_t Port = 2001;
 
 void log_init(){
@@ -45,23 +47,23 @@ io_service service;
 ip::tcp::endpoint ep( ip::address::from_string("127.0.0.1"), Port);
 ip::tcp::socket sock(service);
 sock.connect(ep);
-sock.write_some(buffer{"Kirill\r\n"});
+sock.write_some(buffer("Kirill\r\n"));
 BOOST_LOG_TRIVIAL(info) << "Name is sent";
 
 char data[512];
-size_t read_bytes = sock.read_some(buffer{data});
+size_t read_bytes = sock.read_some(buffer(data));
 std::string read = data; 
 if (read_bytes > 0)
 	BOOST_LOG_TRIVIAL(info) << "Received message:" << read;
 
-sock.write_some(buffer{"clients\r\n"});
+sock.write_some(buffer("clients\r\n"));
 BOOST_LOG_TRIVIAL(info) << "Clients request is sent";
 
 char another_data[512];
-size_t read_bytes = sock.read_some(buffer{another_data});
-std::string read = another_data; 
+read_bytes = sock.read_some(buffer(another_data));
+read = another_data;
 if (read_bytes > 0)
 	BOOST_LOG_TRIVIAL(info) << "Received message:" << read;
-
+while(true) continue;
 return 0;
 }
