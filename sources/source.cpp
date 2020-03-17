@@ -21,6 +21,8 @@ namespace logging = boost::log;
 static const uint32_t SIZE_FILE = 10*1024*1024;
 static const uint32_t Port = 2001;
 
+typedef boost::shared_ptr<ip::tcp::socket> socket_ptr;
+
 void log_init(){
         boost::log::register_simple_formatter_factory
                 <boost::log::trivial::severity_level, char>("Severity");
@@ -40,30 +42,61 @@ void log_init(){
                         = "[%TimeStamp%] [%Severity%]: %Message%");
         logging::add_common_attributes();
 }
+class My_begemot_is_drunk{
+public:
+    My_begemot_is_drunk(std::string _name):name(_name){
+        log_init();
+        io_service service;
+        ip::tcp::endpoint ep( ip::address::from_string("127.0.0.1"), Port);
+        sock = socket_ptr(new ip::tcp::socket(service));
+        sock->connect(ep);
+    }
+    ~My_begemot_is_drunk(){}
+    std::string receive_message(){
+        char data[512];
+        size_t read_bytes = sock->read_some(buffer(data));
+        std::string read = data;
+        if (read.find('\n') != std::string::npos)
+            read.assign(read, 0, read.rfind('\n'));
+        if (read_bytes > 0)
+            BOOST_LOG_TRIVIAL(info) << "Received message:" << read;
+        return read;
+    }
+    void knock_knock(){
+        sock->write_some(buffer(name +"\r\n"));
+        BOOST_LOG_TRIVIAL(info) << "Name is sent";
 
+        receive_message();
+
+        sock->write_some(buffer("clients\r\n"));
+        BOOST_LOG_TRIVIAL(info) << "Clients request is sent";
+        receive_message();
+
+        for (uint32_t i = 0; i < 10; ++i){
+            std::this_thread::__sleep_for(std::chrono::seconds{1},
+                                          std::chrono::nanoseconds{0});
+            sock->write_some(buffer("ping\r\n"));
+            BOOST_LOG_TRIVIAL(info) << "Pinged";
+            receive_message();
+            BOOST_LOG_TRIVIAL(info) << "Ponged";
+        }
+        for (uint32_t i = 0; i < 5; ++i){
+            std::this_thread::__sleep_for(std::chrono::seconds{1},
+                                          std::chrono::nanoseconds{0});
+        }
+        sock->write_some(buffer("Bye\r\n"));
+        BOOST_LOG_TRIVIAL(info) << "Byed";
+        while (true) continue;
+    }
+
+public:
+    io_service service;
+    socket_ptr sock;
+    std::string name;
+};
 int main(){
-log_init();
-io_service service;
-ip::tcp::endpoint ep( ip::address::from_string("127.0.0.1"), Port);
-ip::tcp::socket sock(service);
-sock.connect(ep);
-sock.write_some(buffer("Kirill\r\n"));
-BOOST_LOG_TRIVIAL(info) << "Name is sent";
+    My_begemot_is_drunk client(std::string("Kirill"));
+    client.knock_knock();
 
-char data[512];
-size_t read_bytes = sock.read_some(buffer(data));
-std::string read = data; 
-if (read_bytes > 0)
-	BOOST_LOG_TRIVIAL(info) << "Received message:" << read;
-
-sock.write_some(buffer("clients\r\n"));
-BOOST_LOG_TRIVIAL(info) << "Clients request is sent";
-
-char another_data[512];
-read_bytes = sock.read_some(buffer(another_data));
-read = another_data;
-if (read_bytes > 0)
-	BOOST_LOG_TRIVIAL(info) << "Received message:" << read;
-while(true) continue;
-return 0;
+    return 0;
 }
