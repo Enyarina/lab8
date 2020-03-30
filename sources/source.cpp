@@ -73,11 +73,11 @@ public:
         return read;
     }
     void ping(){
-        sock->write_some(buffer("ping\r\n"));
+        sock->write_some(buffer("ping\n"));
         BOOST_LOG_TRIVIAL(info) << "Pinged";
         std::string message = receive_message();
         if (message == std::string("client_list_changed")){
-            sock->write_some(buffer("clients\r\n"));
+            sock->write_some(buffer("clients\n"));
             BOOST_LOG_TRIVIAL(info) << "Clients request is sent";
             receive_message();
         }
@@ -87,12 +87,12 @@ public:
         }
     }
     void knock_knock(){
-        sock->write_some(buffer(name + "\r\n"));
+        sock->write_some(buffer(name + "\n"));
         BOOST_LOG_TRIVIAL(info) << "Name is sent";
 
         receive_message();
 
-        sock->write_some(buffer("clients\r\n"));
+        sock->write_some(buffer("clients\n"));
         BOOST_LOG_TRIVIAL(info) << "Clients request is sent";
         receive_message();
 
