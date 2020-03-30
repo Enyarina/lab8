@@ -22,8 +22,8 @@ static const uint32_t SIZE_FILE = 10*1024*1024;
 static const uint32_t Port = 2001;
 static const std::string IP = "127.0.0.1";
 static const uint32_t buf_size = 512;
-static const uint32_t seconds_to_live = 10;
-static const uint32_t seconds_to_sleep = 5;
+static const uint32_t seconds_to_live = time(NULL) % 10 + 3;
+static const uint32_t seconds_to_sleep = time(NULL) % 10 + 6;
 
 typedef boost::shared_ptr<ip::tcp::socket> socket_ptr;
 
@@ -63,7 +63,6 @@ public:
         if (read_bytes > 0) {
             if (read.find('\n') != std::string::npos) {
                 read.assign(read, 0, read.rfind('\n'));
-                BOOST_LOG_TRIVIAL(info) << "Received message:" << read;
             }
             else
                 throw std::logic_error("Received wrong message");
@@ -79,16 +78,18 @@ public:
         if (message == std::string("client_list_changed")){
             sock->write_some(buffer("clients\n"));
             BOOST_LOG_TRIVIAL(info) << "Clients request is sent";
-            receive_message();
+            BOOST_LOG_TRIVIAL(info) << "Clients:" << receive_message();
         }
         else if (message == std::string("too_late")){
-            BOOST_LOG_TRIVIAL(fatal) << "Too late ping" << "Exiting server";
+            BOOST_LOG_TRIVIAL(fatal) << "Too late ping" << std::endl << "Exiting server";
             throw std::exception();
         }
+        else
+            BOOST_LOG_TRIVIAL(info) << "Received message:" << message;
     }
     void knock_knock(){
         sock->write_some(buffer(name + "\n"));
-        BOOST_LOG_TRIVIAL(info) << "Name is sent";
+        BOOST_LOG_TRIVIAL(info) << "Name is sent " << name;
 
         receive_message();
 
@@ -114,8 +115,9 @@ public:
     std::string name;
 };
 int  main(int argc, char* argv[]){
-    if (argc)
-        std::string client_name = argv[0];
+    std::string client_name;
+    if (argc == 2)
+        client_name = argv[1];
     else{
         BOOST_LOG_TRIVIAL(fatal) << "No name mentioned"
         << "Type client name as the first argument";
@@ -132,7 +134,8 @@ int  main(int argc, char* argv[]){
             "The connection to the server has been lost";
         }
         else{
-            BOOST_LOG_TRIVIAL(fatal) << e.what();
+            if (e.what() != std::string("std::exception"))
+                BOOST_LOG_TRIVIAL(fatal) << e.what();
         }
     }
     return 0;

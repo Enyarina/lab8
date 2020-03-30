@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/lab_08_asio_client.dir/sources/source.cpp.o CMakeFiles/lab_08_asio_client.dir/tests/test.cpp.o  -o lab_08_asio_client 

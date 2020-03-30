@@ -1,0 +1,25 @@
+[2020-03-30 19:35:56.620808] [info] Name is sent dima
+[2020-03-30 19:35:56.963272] [info] Clients request is sent
+[2020-03-30 19:35:58.333857] [info] Pinged
+[2020-03-30 19:35:58.333934] [info] Received message:ping_ok
+[2020-03-30 19:35:59.334339] [info] Pinged
+[2020-03-30 19:35:59.334416] [info] Received message:ping_ok
+[2020-03-30 19:36:00.334755] [info] Pinged
+[2020-03-30 19:36:00.334817] [info] Received message:ping_ok
+[2020-03-30 19:36:01.335403] [info] Pinged
+[2020-03-30 19:36:01.335456] [info] Received message:ping_ok
+[2020-03-30 19:36:02.336462] [info] Pinged
+[2020-03-30 19:36:02.336518] [info] Received message:ping_ok
+[2020-03-30 19:36:03.336840] [info] Pinged
+[2020-03-30 19:36:03.336893] [info] Received message:ping_ok
+[2020-03-30 19:36:04.337236] [info] Pinged
+[2020-03-30 19:36:04.337305] [info] Received message:ping_ok
+[2020-03-30 19:36:05.337719] [info] Pinged
+[2020-03-30 19:36:05.337772] [info] Received message:ping_ok
+[2020-03-30 19:36:06.338615] [info] Pinged
+[2020-03-30 19:36:06.338668] [info] Received message:ping_ok
+[2020-03-30 19:36:18.344124] [info] Pinged
+[2020-03-30 19:36:18.344295] [fatal] Too late ping
+Exiting server
+
+

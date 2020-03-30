@@ -14,8 +14,6 @@ string(APPEND CMAKE_CXX_FLAGS " -g -Wall -DBOOST_LOG_DYN_LINK")
 set(D_LIBRARY_PATH="/home/kirill/Documents//boost/installed/lib/")
 include_directories(include)
 
-project(8_lab)
-
 find_package(Boost 1.72.0 COMPONENTS REQUIRED thread log log_setup)
 
 add_executable(8_lab
