@@ -1,31 +1,6 @@
-#include <ctime>
-#include <vector>
-#include <thread>
-#include <cstdint>
-#include <iostream>
-#include <string>
-#include <mutex>
-#include <boost/asio.hpp>
-#include <boost/thread/thread.hpp>
-#include <boost/log/trivial.hpp>
-#include <boost/log/expressions.hpp>
-#include <boost/log/utility/setup/file.hpp>
-#include <boost/log/utility/setup/common_attributes.hpp>
-#include <boost/log/utility/setup/console.hpp>
-#include <boost/log/sources/severity_logger.hpp>
-#include <boost/core/null_deleter.hpp>
-#include <boost/log/expressions/keyword.hpp>
+// Copyright 2019 dimakirol <your_email>
 
-using namespace boost::asio;
-namespace logging = boost::log;
-static const uint32_t SIZE_FILE = 10*1024*1024;
-static const uint32_t Port = 2001;
-static const std::string IP = "127.0.0.1";
-static const uint32_t buf_size = 512;
-static const uint32_t seconds_to_live = time(NULL) % 10 + 3;
-static const uint32_t seconds_to_sleep = time(NULL) % 10 + 6;
-
-typedef boost::shared_ptr<ip::tcp::socket> socket_ptr;
+#include <header.hpp>
 
 void log_init(){
         boost::log::register_simple_formatter_factory
@@ -50,50 +25,50 @@ class SUClient{
 public:
     SUClient(std::string _name):name(_name){
         log_init();
-        io_service service;
-        ip::tcp::endpoint ep(ip::address::from_string(IP), Port);
-        sock = socket_ptr(new ip::tcp::socket(service));
+        assio::io_service service;
+        assio::ip::tcp::endpoint ep(assio::ip::address::from_string(IP), Port);
+        sock = socket_ptr(new assio::ip::tcp::socket(service));
         sock->connect(ep);
     }
     ~SUClient(){}
     std::string receive_message(){
-        char data[buf_size];
-        size_t read_bytes = sock->read_some(buffer(data));
+        char data[512];
+        size_t read_bytes = sock->read_some(assio::buffer(data));
         std::string read = data;
         if (read_bytes > 0) {
             if (read.find('\n') != std::string::npos) {
                 read.assign(read, 0, read.rfind('\n'));
-            }
-            else
+            } else {
                 throw std::logic_error("Received wrong message");
-        }
-        else
+            }
+        } else {
             throw std::logic_error("Received empty message");
+        }
         return read;
     }
     void ping(){
-        sock->write_some(buffer("ping\n"));
+        sock->write_some(assio::buffer("ping\n"));
         BOOST_LOG_TRIVIAL(info) << "Pinged";
         std::string message = receive_message();
-        if (message == std::string("client_list_changed")){
-            sock->write_some(buffer("clients\n"));
+        if (message == std::string("client_list_changed")) {
+            sock->write_some(assio::buffer("clients\n"));
             BOOST_LOG_TRIVIAL(info) << "Clients request is sent";
             BOOST_LOG_TRIVIAL(info) << "Clients:" << receive_message();
-        }
-        else if (message == std::string("too_late")){
-            BOOST_LOG_TRIVIAL(fatal) << "Too late ping" << std::endl << "Exiting server";
+        } else if (message == std::string("too_late")) {
+            BOOST_LOG_TRIVIAL(fatal) << "Too late ping"
+                                     << std::endl << "Exiting server";
             throw std::exception();
-        }
-        else
+        } else {
             BOOST_LOG_TRIVIAL(info) << "Received message:" << message;
+        }
     }
     void knock_knock(){
-        sock->write_some(buffer(name + "\n"));
+        sock->write_some(assio::buffer(name + "\n"));
         BOOST_LOG_TRIVIAL(info) << "Name is sent " << name;
 
         receive_message();
 
-        sock->write_some(buffer("clients\n"));
+        sock->write_some(assio::buffer("clients\n"));
         BOOST_LOG_TRIVIAL(info) << "Clients request is sent";
         receive_message();
 
@@ -110,15 +85,15 @@ public:
     }
 
 public:
-    io_service service;
+    assio::io_service service;
     socket_ptr sock;
     std::string name;
 };
 int  main(int argc, char* argv[]){
     std::string client_name;
-    if (argc == 2)
+    if (argc == 2) {
         client_name = argv[1];
-    else{
+    } else {
         BOOST_LOG_TRIVIAL(fatal) << "No name mentioned"
         << "Type client name as the first argument";
         return -1;
@@ -126,14 +101,13 @@ int  main(int argc, char* argv[]){
     try {
         SUClient client(client_name);
         client.knock_knock();
-    } catch (std::logic_error const& e){
+    } catch (std::logic_error const& e) {
         BOOST_LOG_TRIVIAL(fatal) << "Received strange message";
     } catch (std::exception const& e){
         if (e.what() == std::string("read_some: End of file")){
             BOOST_LOG_TRIVIAL(fatal) <<
             "The connection to the server has been lost";
-        }
-        else{
+        } else {
             if (e.what() != std::string("std::exception"))
                 BOOST_LOG_TRIVIAL(fatal) << e.what();
         }
