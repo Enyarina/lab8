@@ -1,5 +1,8 @@
 # Лабораторная работа №8
+[![Travis][build-badge]][build]
 
+[build-badge]: https://travis-ci.com/dimakirol/lab-08-asio-client.svg?branch=master
+[build]: https://travis-ci.com/dimakirol/lab-08-asio-client
 ## Задание
 
 Использовать [Boost.Asio](https://www.boost.org/doc/libs/1_66_0/doc/html/boost_asio.html) для реализации клиента для сервера из Лабораторной работы №7.
