@@ -23,7 +23,7 @@ void log_init(){
 }
 class SUClient{
 public:
-    SUClient(std::string _name):name(_name){
+    explicit SUClient(std::string _name):name(_name){
         log_init();
         assio::io_service service;
         assio::ip::tcp::endpoint ep(assio::ip::address::from_string(IP), Port);

@@ -21,11 +21,12 @@
 #include <boost/core/null_deleter.hpp>
 #include <boost/log/expressions/keyword.hpp>
 
+#define IP "127.0.0.1"
+
 namespace assio = boost::asio;
 namespace logging = boost::log;
 static const uint32_t SIZE_FILE = 10*1024*1024;
 static const uint32_t Port = 2001;
-static const std::string IP = "127.0.0.1";
 static const uint32_t buf_size = 512;
 static const uint32_t seconds_to_live = time(NULL) % 10 + 3;
 static const uint32_t seconds_to_sleep = time(NULL) % 10 + 6;
