@@ -31,6 +31,6 @@ static const uint32_t buf_size = 512;
 static const uint32_t seconds_to_live = time(NULL) % 10 + 3;
 static const uint32_t seconds_to_sleep = time(NULL) % 10 + 6;
 
-typedef boost::shared_ptr<ip::tcp::socket> socket_ptr;
+typedef boost::shared_ptr<assio::ip::tcp::socket> socket_ptr;
 
 #endif // INCLUDE_HEADER_HPP_
