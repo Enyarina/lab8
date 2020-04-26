@@ -1,25 +1,30 @@
-[2020-03-30 19:35:56.620808] [info] Name is sent dima
-[2020-03-30 19:35:56.963272] [info] Clients request is sent
-[2020-03-30 19:35:58.333857] [info] Pinged
-[2020-03-30 19:35:58.333934] [info] Received message:ping_ok
-[2020-03-30 19:35:59.334339] [info] Pinged
-[2020-03-30 19:35:59.334416] [info] Received message:ping_ok
-[2020-03-30 19:36:00.334755] [info] Pinged
-[2020-03-30 19:36:00.334817] [info] Received message:ping_ok
-[2020-03-30 19:36:01.335403] [info] Pinged
-[2020-03-30 19:36:01.335456] [info] Received message:ping_ok
-[2020-03-30 19:36:02.336462] [info] Pinged
-[2020-03-30 19:36:02.336518] [info] Received message:ping_ok
-[2020-03-30 19:36:03.336840] [info] Pinged
-[2020-03-30 19:36:03.336893] [info] Received message:ping_ok
-[2020-03-30 19:36:04.337236] [info] Pinged
-[2020-03-30 19:36:04.337305] [info] Received message:ping_ok
-[2020-03-30 19:36:05.337719] [info] Pinged
-[2020-03-30 19:36:05.337772] [info] Received message:ping_ok
-[2020-03-30 19:36:06.338615] [info] Pinged
-[2020-03-30 19:36:06.338668] [info] Received message:ping_ok
-[2020-03-30 19:36:18.344124] [info] Pinged
-[2020-03-30 19:36:18.344295] [fatal] Too late ping
+[2020-04-27 01:16:09.379160] [info] Name is sent danya
+[2020-04-27 01:16:09.725189] [info] Clients request is sent
+[2020-04-27 01:16:11.072564] [info] Pinged
+[2020-04-27 01:16:11.072615] [info] Received message:ping_ok
+[2020-04-27 01:16:12.072844] [info] Pinged
+[2020-04-27 01:16:12.072893] [info] Received message:ping_ok
+[2020-04-27 01:16:13.073233] [info] Pinged
+[2020-04-27 01:16:13.073282] [info] Received message:ping_ok
+[2020-04-27 01:16:14.073551] [info] Pinged
+[2020-04-27 01:16:14.073600] [info] Received message:ping_ok
+[2020-04-27 01:16:15.073886] [info] Pinged
+[2020-04-27 01:16:15.073935] [info] Received message:ping_ok
+[2020-04-27 01:16:16.074212] [info] Pinged
+[2020-04-27 01:16:16.074261] [info] Received message:ping_ok
+[2020-04-27 01:16:17.074500] [info] Pinged
+[2020-04-27 01:16:17.074549] [info] Received message:ping_ok
+[2020-04-27 01:16:18.074878] [info] Pinged
+[2020-04-27 01:16:18.074926] [info] Received message:ping_ok
+[2020-04-27 01:16:19.075208] [info] Pinged
+[2020-04-27 01:16:19.075258] [info] Received message:ping_ok
+[2020-04-27 01:16:20.075540] [info] Pinged
+[2020-04-27 01:16:20.075600] [info] Received message:ping_ok
+[2020-04-27 01:16:21.075829] [info] Pinged
+[2020-04-27 01:16:21.075878] [info] Received message:ping_ok
+[2020-04-27 01:16:22.076159] [info] Pinged
+[2020-04-27 01:16:22.076208] [info] Received message:ping_ok
+[2020-04-27 01:16:37.081184] [info] Pinged
+[2020-04-27 01:16:37.081253] [fatal] Too late ping
 Exiting server
-
 
