@@ -1,15 +1,14 @@
 /home/enrina/Documents/clion-2019.2.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/enrina/Desktop/laby/lab-08-asio-client
--- Boost version: 1.65.1
--- Found the following Boost libraries:
---   thread
---   log
---   log_setup
---   chrono
---   system
---   date_time
---   atomic
---   filesystem
---   regex
--- Configuring done
--- Generating done
--- Build files have been written to: /home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug
+CMake Error at CMakeLists.txt:14 (include):
+  include could not find load file:
+
+    tools/gate/cmake/HunterGate.cmake
+
+
+CMake Error at CMakeLists.txt:16 (HunterGate):
+  Unknown CMake command "HunterGate".
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/CMakeFiles/CMakeError.log".
