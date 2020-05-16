@@ -1,4 +1,4 @@
-# Install script for directory: /home/kirill/Documents/4_semestr/lab-08-asio-client
+# Install script for directory: /home/enrina/Desktop/laby/lab-08-asio-client
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

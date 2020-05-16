@@ -8,34 +8,33 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug"/>
+				<Option working_dir="/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug"/>
+				<Option working_dir="/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="8_lab">
-				<Option output="/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/8_lab" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug"/>
+				<Option output="/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/8_lab" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/kirill/Documents/4_semestr/lab-08-asio-client/include"/>
-					<Add directory="/home/kirill/Documents/boost/installed/include"/>
+					<Add directory="/home/enrina/Desktop/laby/lab-08-asio-client/include"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -46,21 +45,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 8_lab"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 8_lab"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="8_lab/fast">
-				<Option output="/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/8_lab" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug"/>
+				<Option output="/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/8_lab" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/kirill/Documents/4_semestr/lab-08-asio-client/include"/>
-					<Add directory="/home/kirill/Documents/boost/installed/include"/>
+					<Add directory="/home/enrina/Desktop/laby/lab-08-asio-client/include"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -71,27 +69,27 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 8_lab/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 8_lab/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug"/>
+				<Option working_dir="/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/kirill/Documents/4_semestr/lab-08-asio-client/sources/source.cpp">
+		<Unit filename="/home/enrina/Desktop/laby/lab-08-asio-client/sources/source.cpp">
 			<Option target="8_lab"/>
 		</Unit>
-		<Unit filename="/home/kirill/Documents/4_semestr/lab-08-asio-client/CMakeLists.txt">
+		<Unit filename="/home/enrina/Desktop/laby/lab-08-asio-client/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

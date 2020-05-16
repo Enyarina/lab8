@@ -1,4 +1,4 @@
-// Copyright 2019 dimakirol <your_email>
+// Copyright 2019 enrina <your_email>
 
 #include <header.hpp>
 
@@ -21,16 +21,16 @@ void log_init(){
                         = "[%TimeStamp%] [%Severity%]: %Message%");
         logging::add_common_attributes();
 }
-class SUClient{
+class SuperClient{
 public:
-    explicit SUClient(std::string _name):name(_name){
+    explicit SuperClient(std::string _name):name(_name){
         log_init();
         assio::io_service service;
         assio::ip::tcp::endpoint ep(assio::ip::address::from_string(IP), Port);
         sock = socket_ptr(new assio::ip::tcp::socket(service));
         sock->connect(ep);
     }
-    ~SUClient(){}
+    ~SuperClient(){}
     std::string receive_message(){
         char data[512];
         size_t read_bytes = sock->read_some(assio::buffer(data));
@@ -99,7 +99,7 @@ int  main(int argc, char* argv[]){
         return -1;
     }
     try {
-        SUClient client(client_name);
+        SuperClient client(client_name);
         client.knock_knock();
     } catch (std::logic_error const& e) {
         BOOST_LOG_TRIVIAL(fatal) << "Received strange message";
@@ -113,4 +113,4 @@ int  main(int argc, char* argv[]){
         }
     }
     return 0;
-}//P.S. SUClient -- means Super Ultra Client
+}

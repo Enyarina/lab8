@@ -1,3 +1,3 @@
-/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/CMakeFiles/8_lab.dir
-/home/kirill/Documents/4_semestr/lab-08-asio-client/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/CMakeFiles/8_lab.dir
+/home/enrina/Desktop/laby/lab-08-asio-client/cmake-build-debug/CMakeFiles/edit_cache.dir
